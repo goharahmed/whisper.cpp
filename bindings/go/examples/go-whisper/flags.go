@@ -37,8 +37,11 @@ func NewFlags(name string, args []string) (*Flags, error) {
 	return flags, nil
 }
 
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
 // PUBLIC METHODS
+func (flags *Flags) GetWSSSocket() string {
+	return flags.Lookup("listen_wss").Value.String()
+}
 
 func (flags *Flags) GetModel() string {
 	return flags.Lookup("model").Value.String()
